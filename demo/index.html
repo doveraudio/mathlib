@@ -1,0 +1,51 @@
+<html>
+	<head>
+		
+		<script src="../lib/mathadv.js"></script>
+		<script src="../lib/src/precalc/linear.js"></script>
+	</head>
+	<body>
+	<div id="results">
+		
+	</div>
+	
+	
+		<script>
+			var i = 0;
+			console.log("Creating linear function");
+			var fun1 = new Linear(); 
+			fun1.m = 1.13;
+			fun1.b = 3;
+			for(i=0;i<10;i++){
+				console.log(fun1.f(i));
+			}
+			console.log("Creating Point");
+			var point = new Point();
+			var otherPoint = new Point();
+			point.x = 2;
+			point.y = 4;
+			otherPoint.x = 7;
+			otherPoint.y = 5;
+			console.log("Point a:");
+			console.log(JSON.stringify(point));
+			console.log("Point b:");
+			console.log(JSON.stringify(otherPoint));
+			
+			console.log("Distance Between them:");
+			console.log(point.distance(otherPoint));
+			var line = new Line();
+			line.a.x = 13;
+			line.a.y = 14;
+			line.b.x = 17;
+			line.b.y = 37;
+			console.log("Line:");
+			console.log(JSON.stringify(line));
+			console.log("Length of line:");
+			console.log(line.length());
+			console.log("Midpoint of line:");
+			console.log(JSON.stringify(line.midpoint()));
+			console.log("Slope of line:");
+			console.log(line.slope());
+			</script>
+	</body>
+</html>

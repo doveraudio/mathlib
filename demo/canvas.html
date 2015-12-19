@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Math Canvas Demo</title>
+    <script src="../lib/src/precalc/linear.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div>
+            <h3>Select Function to run</h3>
+            <canvas id="CanvasScope" width="300" height="300" style="border:1px solid #000000">
+            
+            </canvas>
+            
+            <select id="functionSelect">
+                <option value="1">function1</option>
+                <option value="2">function2</option>
+                
+            </select>   
+        </div>
+        
+    <script>
+        var functionSelect = document.getElementById('functionSelect');
+        functionSelect.onchange = function(){
+          console.log(functionSelect.selectedIndex);  
+          console.log(functionSelect.options[functionSelect.selectedIndex].innerHTML);  
+          var lin = new Linear(3531,3);
+          lin.debug = true;
+          lin.b = 2;
+          lin.m = 3;
+          console.log(createArray(lin.f,100,100));
+          console.log("lin B");
+          console.log(lin.b);
+          console.log("lin M");
+          console.log(lin.m);
+          
+          
+        };
+        console.log(functionSelect);
+        
+        
+        var createArray = function(f,length,height){
+            if(isNumeric(length) && isNumeric(height)){
+            var samples = new Array();
+            var i;
+            for(i=0;i<length;i++){
+                
+                samples.push(f(i));
+                
+            }
+            return samples;  
+            
+            
+        }
+        };
+        
+        
+        
+        
+        
+    </script>
+        
+    </body>
+</html>
+    
